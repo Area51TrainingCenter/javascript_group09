@@ -1,2 +1,4 @@
-# javascript_group09
-Javascript
+# Curso de Javascript
+## Instructor: Sergio Hidalgo
+### Enero 2017
+

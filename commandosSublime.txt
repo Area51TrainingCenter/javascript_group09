@@ -1,0 +1,6 @@
+[
+	{ "keys": ["alt+a"], "command": "toggle_side_bar" },
+	{ "keys": ["super+k"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["super+shift+k"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["super+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} }
+]

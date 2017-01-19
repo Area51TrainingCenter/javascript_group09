@@ -1,0 +1,10 @@
+https://github.com/Area51TrainingCenter/javascript_group09
+
+Para descargar (clonar) el repositorio (les crea una carpeta)
+git clone https://github.com/Area51TrainingCenter/javascript_group09.git
+
+pwd: para saber en qué carpeta estamos
+
+Para actualizar el repositorio (tienen que estar dentro de la carpeta creada por "git clone")
+git pull origin master
+

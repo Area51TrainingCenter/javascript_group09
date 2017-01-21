@@ -6,59 +6,28 @@
 </head>
 <body>
 
+
+<script src="juego.js"></script>
 <script>
-	var miEleccion = prompt("Ingrese su elección")
+	var empate = true
 
-	var aleatorio = Math.random()
-	var eleccionComputadora
+	while(empate==true){
 
-	if(aleatorio < 0.33) {
-		eleccionComputadora = "piedra"
-	} else if(aleatorio < 0.66) {
-		eleccionComputadora = "papel"
-	} else {
-		eleccionComputadora = "tijera"
-	}
+		var miEleccion =""
 
-	// Mi elección es piedra
-	if(miEleccion=="piedra" && eleccionComputadora=="tijera") {
-		console.log("Ganó usted")
-	}
+		while(miEleccion!="piedra" && miEleccion!="papel" && miEleccion!="tijera") {
+		 	miEleccion= prompt("Ingrese su elección")
+		}
 
-	if(miEleccion=="piedra" && eleccionComputadora=="papel") {
-		console.log("Ganó la computadora")
-	}
+		var eleccionComputadora = generarEleccionComputadora()
 
-	if(miEleccion=="piedra" && eleccionComputadora=="piedra"){
-		console.log("Empate")
+		console.log("Mi elección fue " + miEleccion)
+		console.log("La elección de la computadora fue " + eleccionComputadora)
+
+		empate = verificarEstadoJuego(miEleccion, eleccionComputadora)
 	}
 
 
-	// Mi elección es papel
-	if(miEleccion=="papel" && eleccionComputadora=="tijera") {
-		console.log("Ganó la computadora")
-	}
-
-	if(miEleccion=="papel" && eleccionComputadora=="piedra") {
-		console.log("Ganó usted")
-	}
-
-	if(miEleccion=="papel" && eleccionComputadora=="papel"){
-		console.log("Empate")
-	}
-
-	// Mi elección es tijera
-	if(miEleccion=="tijera" && eleccionComputadora=="papel") {
-		console.log("Ganó usted")
-	}
-
-	if(miEleccion=="tijera" && eleccionComputadora=="piedra") {
-		console.log("Ganó la computadora")
-	}
-
-	if(miEleccion=="tijera" && eleccionComputadora=="tijera"){
-		console.log("Empate")
-	}
 
 
 

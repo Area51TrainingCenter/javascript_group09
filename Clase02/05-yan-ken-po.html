@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	var miEleccion = prompt("Ingrese su elección")
+
+	var aleatorio = Math.random()
+	var eleccionComputadora
+
+	if(aleatorio < 0.33) {
+		eleccionComputadora = "piedra"
+	} else if(aleatorio < 0.66) {
+		eleccionComputadora = "papel"
+	} else {
+		eleccionComputadora = "tijera"
+	}
+
+	// Mi elección es piedra
+	if(miEleccion=="piedra" && eleccionComputadora=="tijera") {
+		console.log("Ganó usted")
+	}
+
+	if(miEleccion=="piedra" && eleccionComputadora=="papel") {
+		console.log("Ganó la computadora")
+	}
+
+	if(miEleccion=="piedra" && eleccionComputadora=="piedra"){
+		console.log("Empate")
+	}
+
+
+	// Mi elección es papel
+	if(miEleccion=="papel" && eleccionComputadora=="tijera") {
+		console.log("Ganó la computadora")
+	}
+
+	if(miEleccion=="papel" && eleccionComputadora=="piedra") {
+		console.log("Ganó usted")
+	}
+
+	if(miEleccion=="papel" && eleccionComputadora=="papel"){
+		console.log("Empate")
+	}
+
+	// Mi elección es tijera
+	if(miEleccion=="tijera" && eleccionComputadora=="papel") {
+		console.log("Ganó usted")
+	}
+
+	if(miEleccion=="tijera" && eleccionComputadora=="piedra") {
+		console.log("Ganó la computadora")
+	}
+
+	if(miEleccion=="tijera" && eleccionComputadora=="tijera"){
+		console.log("Empate")
+	}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

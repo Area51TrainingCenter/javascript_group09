@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		div#elemento {
+			width:200px;
+			height: 200px;
+			background-color: red;
+			color: blue;
+		}
+
+		article {
+			width: 200px;
+			height: 50px;
+			font-size: 20px;
+			color: red;
+		}
+
+		section {
+			color: blue;
+			font-size: 40px;
+			font-family: Verdana;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="elemento">Texto</div>
+
+	<article>Texto 1</article>
+	<article>Texto 2</article>
+	<article>Texto 3</article>
+
+	<section class="naranja">Texto Section1</section>
+	<section class="naranja">Texto Section2</section>
+	<section>Texto Section3</section>
+	<section>Texto Section4</section>
+	<section>Texto Section5</section>
+	<aside class="naranja">Texto aside</aside>
+
+	<script type="text/javascript">
+	
+	// Selección por Id
+	var divSeleccionado = document.getElementById("elemento")
+	// style sirve para cambiar estilos a un elemento html
+	divSeleccionado.style.color = "yellow"
+	divSeleccionado.style.fontSize = "50px"
+	divSeleccionado.style.fontFamily = "Verdana"
+	divSeleccionado.style.backgroundColor = "green"
+
+	// Selección por nombre de etiqueta html
+	var articles = document.getElementsByTagName("article")
+	var longitud = articles.length //Devuelve la cantidad de elementos de la lista o arreglo
+	for(var i=0; i<longitud; i++) {
+		articles[i].style.fontSize = "40px"
+	}
+
+	// Selección por clase
+	var sections = document.getElementsByClassName("naranja")
+	longitud = sections.length
+	for(i=0; i<longitud; i++) {
+		sections[i].style.color = "orange"
+	}
+
+	var soloSections = document.querySelectorAll("section.naranja")
+	longitud = soloSections.length
+	for(i=0; i<longitud; i++) {
+		soloSections[i].style.fontStyle = "italic"
+	}
+
+
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>

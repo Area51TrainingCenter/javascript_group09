@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<input type="button" id="btn" value="Presionar">
+	<input type="button" id="btnMouse" value="Pasa encima">
+
+	<script>
+		var boton = document.getElementById("btn")
+		var botonMouse = document.getElementById("btnMouse")
+		// var boton = document.getElementsByTagName("input")[0]
+
+		boton.addEventListener("click", function(){
+			document.body.style.backgroundColor = "yellow"
+		})
+
+		botonMouse.addEventListener("mouseover", function(){
+			document.body.style.backgroundColor = "green"
+		})
+
+
+	</script>
+
+</body>
+</html>

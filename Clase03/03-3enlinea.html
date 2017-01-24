@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		table {
+			width: 600px;
+			height: 600px;
+			margin: 0 auto;
+		}
+		td {
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			font-family: Verdana;
+			font-size: 50px;
+			text-align: center
+		}
+	</style>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td data-indice="0"></td>
+			<td data-indice="1"></td>
+			<td data-indice="2"></td>
+		</tr>
+		<tr>
+			<td data-indice="3"></td>
+			<td data-indice="4"></td>
+			<td data-indice="5"></td>
+		</tr>
+		<tr>
+			<td data-indice="6"></td>
+			<td data-indice="7"></td>
+			<td data-indice="8"></td>
+		</tr>
+	</table>
+
+	<script>
+		var turno = false
+
+		var finJuego = false
+
+		var lista = ["", "", "", "", "", "", "", "", ""]
+
+		var verificarGanador = function(letra){
+			var c1 = (lista[0]===letra && lista[1]===letra && lista[2]===letra)
+			var c2 = (lista[3]===letra && lista[4]===letra && lista[5]===letra)
+			var c3 = (lista[6]===letra && lista[7]===letra && lista[8]===letra)
+			var c4 = (lista[0]===letra && lista[3]===letra && lista[6]===letra)
+			var c5 = (lista[1]===letra && lista[4]===letra && lista[7]===letra)
+			var c6 = (lista[2]===letra && lista[5]===letra && lista[8]===letra)
+			var c7 = (lista[0]===letra && lista[4]===letra && lista[8]===letra)
+			var c8 = (lista[2]===letra && lista[4]===letra && lista[6]===letra)
+
+			return c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8
+		}
+
+		var verificarEmpate = function() {
+			var longitud = lista.length
+			for(var i=0; i<longitud; i++) {
+				if(lista[i]==="") return false
+			}
+
+			return true
+		}
+
+		var destruirEventos = function(){
+			var tds = document.getElementsByTagName("td")
+			var longitud = tds.length
+			for(var i=0; i<longitud; i++) {			
+				tds[i].removeEventListener("mouseover", fntMouseOver)
+
+				tds[i].removeEventListener("mouseout", fntMouseOut)
+
+				tds[i].removeEventListener("click", fntJuego)
+			}
+		}
+
+		var fntMouseOver = function(e){
+				// console.log(e)
+				e.target.style.backgroundColor = "yellow"
+		}
+
+		var fntMouseOut = function(e){
+				e.target.style.backgroundColor = "white"
+		}
+
+		var fntJuego = function(e){
+				if(finJuego) return
+/*				if(turno===false) {
+					e.target.innerHTML = "X"
+					turno = true
+				} else {
+					e.target.innerHTML = "O"
+					turno = false
+				}*/
+
+				// Leer un atributo de una etiqueta td
+				var indice = e.target.getAttribute("data-indice")
+
+				// if(lista[indice]!="") return
+
+				if(lista[indice]==="") {
+					// Operador terciario
+					e.target.innerHTML = (turno===false) ? "X" : "O"
+					// ! operador de negación
+					turno = !turno
+
+					lista[indice] = e.target.innerHTML
+
+
+
+					if(verificarGanador("X")){
+						finJuego = true
+						destruirEventos()
+						alert("Ganó la X")
+					} else if(verificarGanador("O")){
+						finJuego = true
+						destruirEventos()
+						alert("Ganó la O")
+					} else if(verificarEmpate()) {
+						finJuego = true
+						destruirEventos()
+						alert("Empate")
+					}
+				}
+
+
+
+				// console.log(lista)
+
+				
+		}
+
+		var tds = document.getElementsByTagName("td")
+		var longitud = tds.length
+		for(var i=0; i<longitud; i++) {
+			tds[i].addEventListener("mouseover", fntMouseOver)
+
+			tds[i].addEventListener("mouseout", fntMouseOut)
+
+			tds[i].addEventListener("click", fntJuego)
+		}
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

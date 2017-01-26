@@ -56,8 +56,8 @@
 		var horas = fecha.getHours()
 
 		var anguloSegundos = segundos * 360 / 60 + 90
-		var anguloMinutos = minutos * 360 / 60 + 90
-		var anguloHoras = horas * 360 / 12 + 90
+		var anguloMinutos = minutos * 360 / 60 + 90 + segundos*6/60 //los minutos son exactos
+		var anguloHoras = horas * 360 / 12 + 90 + minutos*30/360
 
 		var setearSegundero = function(){
 			fecha = new Date()

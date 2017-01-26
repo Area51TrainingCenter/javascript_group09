@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			background-color: black;
+		}
+		div.mascara {
+			width: 400px;
+			height:400px;
+			margin:50px auto;
+			border-radius: 50%;
+			border: 20px solid white;
+			position: relative;
+		}
+
+		div.manecilla {
+			width: 50%;
+			height: 6px;
+			position: absolute;
+			top: 50%;
+			transform: rotate(90deg);
+			transform-origin: 100% 50%;
+			transition: transform 1000ms linear
+ 		}
+
+		div.manecilla.segundero {
+			background-color: red;
+		}
+		div.manecilla.minutero {
+			background-color: yellow;
+		}
+
+		div.manecilla.horario {
+			background-color: skyblue
+		}
+	</style>
+</head>
+<body>
+
+	<div class="mascara">
+		<div class="manecilla segundero"></div>
+		<div class="manecilla minutero"></div>
+		<div class="manecilla horario"></div>
+	</div>
+
+
+	<script>
+		var anguloSegundos = 0, 
+			anguloMinutos = 0, 
+			anguloHorario = 0
+
+		var setearHora = function(){
+			var fecha = new Date()
+			// console.log(fecha)
+
+			var segundos = fecha.getSeconds()
+			var minutos = fecha.getMinutes()
+			var horas = fecha.getHours()
+
+			// segundos++
+			// Calcula el ángulo de giro del segundero
+			anguloSegundos = segundos * 360 / 60 + 90
+			var segundero = document.getElementsByClassName("segundero")[0]
+			segundero.style.transform = "rotate(" + anguloSegundos + "deg)"
+
+			// Calcula el ángulo de giro del minutero
+			anguloMinutos = minutos * 360 / 60 + 90
+			var minutero = document.getElementsByClassName("minutero")[0]
+			minutero.style.transform = "rotate(" + anguloMinutos + "deg)"
+
+			// Calcula el ángulo de giro del horario
+			anguloHorario = horas * 360 / 12 + 90
+			var horario = document.getElementsByClassName("horario")[0]
+			horario.style.transform = "rotate(" + anguloHorario + "deg)"			
+		}
+
+		// var segundos = 0
+		setearHora()
+		setInterval(setearHora, 1000)
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>

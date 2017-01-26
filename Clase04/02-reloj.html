@@ -24,8 +24,8 @@
 			position: absolute;
 			top: 50%;
 			transform: rotate(90deg);
-			transform-origin: 100% 50%;
-			transition: transform 1000ms linear
+			transform-origin: 100%;
+			transition: all 300ms linear
  		}
 
 		div.manecilla.segundero {
@@ -50,21 +50,28 @@
 
 
 	<script>
-		var anguloSegundos = 0, 
-			anguloMinutos = 0, 
+		var fecha = new Date()
+		var segundos = fecha.getSeconds()
+		var anguloSegundos = segundos * 360 / 60 + 90
+
+		var anguloMinutos = 0, 
 			anguloHorario = 0
 
 		var setearHora = function(){
-			var fecha = new Date()
+			fecha = new Date()
 			// console.log(fecha)
 
-			var segundos = fecha.getSeconds()
+			
 			var minutos = fecha.getMinutes()
 			var horas = fecha.getHours()
 
 			// segundos++
 			// Calcula el ángulo de giro del segundero
-			anguloSegundos = segundos * 360 / 60 + 90
+			// anguloSegundos = segundos * 360 / 60 + 90
+
+			anguloSegundos += 6
+			console.log(segundos)
+			console.log(anguloSegundos)
 			var segundero = document.getElementsByClassName("segundero")[0]
 			segundero.style.transform = "rotate(" + anguloSegundos + "deg)"
 

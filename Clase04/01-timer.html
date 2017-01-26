@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+	<style>
+		div#cuadrado {
+			width: 300px;
+			height: 300px;
+			background: -webkit-linear-gradient(red, blue);
+			margin: 150px auto;
+		}
+	</style>
+</head>
+<body>
+
+<div id="cuadrado"></div>
+
+
+<script>
+	// Timer que se ejecuta una sola vez
+	setTimeout(function(){
+		console.log("se ejecutó")
+	} , 2000)
+
+	// Timer que se ejecuta infinitamente
+	setInterval(function(){
+		console.log("se ejecuta muchas veces")
+	},1500)
+
+	var angulo = 0
+
+	var cuadrado = document.getElementById("cuadrado")
+	cuadrado.addEventListener("click", function(){
+		setInterval(function(){
+			angulo += 10
+			cuadrado.style.transform = "rotate(" + angulo + "deg)"
+		}, 1000)
+	})
+
+
+</script>
+
+</body>
+</html>

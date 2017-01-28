@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+	<style>
+		body {
+			background-image: url(img/fondo.jpg);
+			background-size:cover;
+			text-align: center;
+		}
+
+		article {
+			width: 80px;
+			font-family: Verdana;
+			color: white;
+			font-size: 17px;
+			margin-top:300px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			margin-left: 15px;
+			margin-right: 15px;
+			text-align: center;
+			background-color: black;
+			border: 1px solid yellow;
+			border-radius: 4px;
+			display: inline-block;
+			transition: all 100ms;
+		}
+
+		article.ejecutando {
+			box-shadow: 0 0 30px yellow;
+		}
+	</style>
+</head>
+<body>
+
+	<article data-rel="65">A</article>
+	<article data-rel="83">S</article>
+	<article data-rel="68">D</article>
+	<article data-rel="70">F</article>
+	<article data-rel="74">J</article>
+	<article data-rel="75">K</article>
+	<article data-rel="76">L</article>
+	<article data-rel="186">Ñ</article>
+	<article data-rel="32">BE</article>
+
+
+	<audio src="sonidos/clap.wav" data-rel="65"></audio>
+	<audio src="sonidos/boom.wav" data-rel="83"></audio>
+	<audio src="sonidos/hihat.wav" data-rel="68"></audio>
+	<audio src="sonidos/kick.wav" data-rel="70"></audio>
+	<audio src="sonidos/openhat.wav" data-rel="74"></audio>
+	<audio src="sonidos/ride.wav" data-rel="75"></audio>
+	<audio src="sonidos/snare.wav" data-rel="76"></audio>
+	<audio src="sonidos/tink.wav" data-rel="186"></audio>
+	<audio src="sonidos/tom.wav" data-rel="32"></audio>
+
+<!-- 	<button id="btn">Presióname</button> -->
+
+	<script src="js-bateria.js"></script>
+
+</body>
+</html>

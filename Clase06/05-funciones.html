@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.btn {
+			width:300px;
+			height: 300px;
+			font-size: 40px;
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			background-color: red;
+			transition: all 300ms
+		}
+
+		.btn.verde {
+			background-color: green
+		}
+
+		.btn.verde.reducido {
+			transform: scale(.5);
+		}
+	</style>
+</head>
+<body>
+
+	<button class="btn">Presióname</button>
+
+	<script>
+		const btn = document.querySelector(".btn")
+
+/*		btn.addEventListener("click", function(){
+			alert("¡Eureka, presionaste bien!")
+		})*/
+
+/*		btn.addEventListener("click", () => {
+			alert("¡Eureka, presionaste bien!")
+		})*/
+
+/*		btn.addEventListener("click", function(){
+			this.classList.add("verde")
+		})*/
+
+/*		btn.addEventListener("click", () => {
+			console.log(this)
+			this.classList.add("verde")
+		})*/
+
+		btn.addEventListener("click", function(){
+			const claseVerde = "verde"
+			const claseReducido = "reducido"
+
+			this.classList.toggle(claseVerde)
+
+			// console.log("Clase = " + claseVerde)
+			console.log(`Clase = ${claseVerde}`)
+
+			setTimeout(() => {
+				this.classList.toggle(claseReducido)
+			}, 1000)
+		})
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+/*	var nombre = "Sergio"
+	let apellido = "Hidalgo"
+	const edad = 40*/
+
+	let nombre = "Sergio"
+	var activo = 1
+
+
+	if(activo==1) {
+		let nombre = " (activo)" // Esta variable solo existe dentro del if
+	}
+
+	// Muestra la variable nombre que no está dentro del if
+	console.log(nombre)
+
+	// Usar const si el tipo de variable no cambiará o no se reasignará
+	const edad = 40
+
+	// edad = 40 da error. Si bien el valor es el mismo, la operación es una reasignación del tipo de variable
+
+	console.log("Edad = " + edad)
+
+	// El json no es una primitiva
+	const persona = {nombre: "Iván"}
+
+	// Se pueden cambiar y/o crear propiedades
+	persona.nombre = "Sergio"
+	persona.edad = 40
+
+	// persona = {nombre: "Sergio"} da error. Se está reasignando el tipo de la variable persona
+
+	console.log(persona)
+
+	// Object.freeze sirve para que una variable no se modificable así no sea primitiva
+	Object.freeze(persona)
+
+	// Estos cambios no afectarán a la variable "persona" porque está "congelada" (freeze)
+	persona.nombre = "Javier"
+	persona.apellido = "Hidalgo"
+
+	console.log(persona)
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	var persona = {}
+
+	persona.nombre = "Sergio"
+	persona.edad = 40
+	persona.dni = "07974521"
+	persona.sexo = "hombre"
+
+	// console.log(persona)
+
+	persona.cursos = ["HTML", "Javascript", "NodeJS", "AngularJS"]
+
+	// console.log(persona)
+
+	// console.log(persona.cursos)
+
+	persona.cursos.push("Phaser")
+
+	// console.log(persona)
+
+	persona.direccion = {
+		distrito: "Pueblo Libre",
+		provincia: "Lima",
+		region: "Lima",
+		nro: 315
+	}
+
+	// console.log(persona)
+
+
+	var jugador = {
+		velocidad: 40,
+		posicionInicial: {x: 450, y:340},
+		vidas: 10,
+		tipo: "jugador",
+		revivir: function(){
+			alert("El jugador revivió")
+		}
+	}
+
+	// console.log(jugador)
+
+	jugador.revivir()
+
+	var agregarElemento = function(elemento){
+		console.log("Velocidad = " +  elemento.velocidad)
+	}
+
+	agregarElemento(jugador)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

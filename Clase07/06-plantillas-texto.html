@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<table></table>
+
+
+<script>
+	const nombre = "Sergio",
+		apellido = "Hidalgo"
+
+	// console.log("Hola " + nombre + apellido)
+	console.log(`Hola ${nombre.toUpperCase()} ${apellido}`)
+
+	const personas = [
+		{nombre: "Sergio", edad:40, sexo:"h"},
+		{nombre: "Martha", edad:50, sexo:"m"},
+		{nombre: "Cecibel", edad:37, sexo:"m"},
+		{nombre: "Juan Carlos", edad:25, sexo:"h"},
+		{nombre: "Miguel", edad:12, sexo:"h"},
+		{nombre: "Janet", edad:26, sexo:"m"},
+		{nombre: "Beto", edad:45, sexo:"h"},
+		{nombre: "Gaby", edad:34, sexo:"m"},
+		{nombre: "Ruben", edad:60, sexo:"h"},
+		{nombre: "Gladys", edad:31, sexo:"m"}
+	]
+
+	const tabla = document.querySelector("table")
+
+	const contenido = `
+		${personas.map(persona => `
+			<tr>
+				<td>${persona.nombre}</td>
+				<td>${persona.edad}</td>
+			</tr>
+			`).join("")
+		}
+	`
+
+	tabla.innerHTML = contenido
+
+
+
+
+</script>
+
+</body>
+</html>

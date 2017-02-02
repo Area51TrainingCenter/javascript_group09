@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	
+	const personas = [
+		{nombre: "Sergio", edad:40, sexo:"h"},
+		{nombre: "Martha", edad:50, sexo:"m"},
+		{nombre: "Cecibel", edad:37, sexo:"m"},
+		{nombre: "Juan Carlos", edad:25, sexo:"h"},
+		{nombre: "Miguel", edad:12, sexo:"h"},
+		{nombre: "Janet", edad:26, sexo:"m"},
+		{nombre: "Beto", edad:45, sexo:"h"},
+		{nombre: "Gaby", edad:34, sexo:"m"},
+		{nombre: "Ruben", edad:60, sexo:"h"},
+		{nombre: "Gladys", edad:31, sexo:"m"}
+	]
+
+	const lista = personas
+					.filter(persona => persona.edad>=30)
+					.map(persona => {
+/*						if(persona.sexo==="h") {
+							persona.tratamiento = "Sr."
+						} else {
+							persona.tratamiento = "Srta."
+						}*/
+
+						persona.tratamiento = (persona.sexo==="h") ? "Sr." : "Srta."
+
+						return persona
+					})
+					.map(persona => `${persona.tratamiento} ${persona.nombre}, usted tiene ${persona.edad} años`)
+
+	console.log(lista)
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

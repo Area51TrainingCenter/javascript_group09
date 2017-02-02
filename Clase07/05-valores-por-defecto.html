@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+		
+	const calcularPago = (netoVenta, igv=0.19, propina=0.05) => netoVenta + netoVenta*igv + netoVenta*propina
+
+	// let pago = calcularPago(200, 0.19, 0.05)
+
+	let pago = calcularPago(200)
+	pago = calcularPago(200, 0.19)
+	pago = calcularPago(200, undefined, 0.05)
+
+	</script>
+
+</body>
+</html>

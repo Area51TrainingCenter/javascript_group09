@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	const familia = ["Ana", "José", "Sergio"]
+
+/*	const familiaConApellido = familia.map(function(miembro){
+		return  miembro + " Hidalgo"
+	})*/
+
+/*	const familiaConApellido = familia.map((miembro) => {
+		return miembro + " Hidalgo"
+	})*/
+
+/*	const familiaConApellido = familia.map(miembro => {
+		return miembro + " Hidalgo"
+	})*/
+
+	// const familiaConApellido = familia.map(miembro => miembro + " Hidalgo")
+
+	// const familiaConApellido = familia.map(miembro => `${miembro} Hidalgo`)
+
+	const familiaConApellido = familia.map(miembro => `${miembro} Hidalgo`.toUpperCase())
+
+	console.log(familiaConApellido)
+
+</script>
+
+</body>
+</html>

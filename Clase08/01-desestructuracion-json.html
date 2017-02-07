@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	const cv = {
+		nombre: "Sergio",
+		apellido: "Hidalgo",
+		redesSociales: {
+			linkedIn: "https://linkedIn.com/sergio.hidalgo",
+			facebook: "https://facebook.com/sergio.hidalgo"
+		}
+	}
+
+/*	const nombre = cv.nombre
+	const apellido = cv.apellido*/
+
+	const {nombre, apellido} = cv
+
+	// const {linkedIn, facebook, twitter, instagram} = cv.redesSociales
+
+	const {linkedIn="no tengo linkedIn", facebook = "no tengo facebook", twitter="no tengo twitter", instagram = "no tengo instagram"} = cv.redesSociales
+
+
+
+
+
+</script>
+
+</body>
+</html>

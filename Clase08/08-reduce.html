@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	const suma = function() {
+		const args = Array.from(arguments)
+
+		return args.reduce((valorPrevio, valorActual) => valorPrevio + valorActual)
+
+/*		let total = 0
+		for(let item of args) {
+			total+=item
+		}
+
+		return total*/
+	}
+
+	console.log(suma(20,30,54))
+
+</script>
+
+</body>
+</html>

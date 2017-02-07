@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	const promesa = new Promise((resolve, reject) => {
+		setTimeout(()=>{
+			resolve("El cliente escogió un cebiche")
+		}, 2000)
+	})
+
+
+	promesa.then(function(mensaje){
+		alert(mensaje)
+	})
+</script>
+
+</body>
+</html>

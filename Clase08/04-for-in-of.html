@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	const equipos = ["Universitario", "Alianza Lima", "Cristal", "Municipal", "Melgar"]
+
+	equipos.forEach((elemento, indice) => {
+		console.log(`[${indice}] = ${elemento}`)
+	})
+
+	for(let equipo in equipos) {
+		console.log(equipo)
+	}
+
+	for(let equipo of equipos) {
+		console.log(equipo)
+	}	
+
+	for(let equipo of equipos.entries()){
+		console.log(`[${equipo[0]}] = ${equipo[1]}`)
+	}
+
+	for(let [indice, equipo] of equipos.entries()){
+		console.log(`[${indice}] = ${equipo}`)
+	}
+
+</script>
+
+
+</body>
+</html>

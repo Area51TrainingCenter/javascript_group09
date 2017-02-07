@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<p>Contenido 1</p>
+<p>Contenido 2</p>
+<p>Contenido 3</p>
+<p>Contenido 4</p>
+<p>Contenido 5</p>
+<p>Contenido 6</p>
+<p>Contenido 7</p>
+
+<script>
+	const listaPs = document.querySelectorAll("p")
+/*	listaPs.forEach(function(elem) {
+		elem.addEventListener("click", function(){
+			alert("p presionada: " + this.textContent)
+		})
+	})*/
+
+	for(let elem of listaPs) {
+		elem.addEventListener("click", function(){
+			alert(`p presionada: ${this.textContent}`)
+		})
+	}
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

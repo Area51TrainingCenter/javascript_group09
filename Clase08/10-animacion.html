@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		h1 {
+			font-family: Arial;
+			font-size: 20px;
+			color: red;
+		}
+
+		h1 span {
+			display: inline-block;
+			transition: transform 300ms
+		}
+
+		h1 span:hover {
+			transform: scale(1.6) rotate(15deg)
+		}
+	</style>
+</head>
+<body>
+
+<form>
+	<input type="text" id="nombre" placeholder="Ingrese su nombre">
+	<input type="button" id="btn" value="Ingresar">
+</form>
+
+<h1></h1>
+
+<input type="button" id="btnAnimador" value="Animador">
+
+<script>
+	const nombre = document.querySelector("#nombre"),
+		  btn = document.getElementById("btn"),
+		  h1 = document.querySelector("h1"),
+		  btnAnimador = document.querySelector("#btnAnimador")
+
+    var letras = (contenido) => [...contenido].map(item => `<span>${item}</span>`)
+
+	btn.addEventListener("click", function(){
+		h1.textContent = nombre.value
+	})
+
+	btnAnimador.addEventListener("click", function(){
+		// console.log(letras(h1.textContent).join(""))
+		h1.innerHTML = letras(h1.textContent).join("")
+	})
+
+</script>
+
+
+</body>
+</html>

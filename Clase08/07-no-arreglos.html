@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<ul>
+	<li><script>document.location.href="http://www.google.com"</script></li>
+	<li>Alumno2</li>
+	<li>Alumno3</li>
+	<li>Alumno4</li>
+	<li>Alumno5</li>
+</ul>
+
+<ol></ol>
+
+<script>
+	const listaLI = document.querySelectorAll("li")
+	const listaItems = Array.from(listaLI)
+
+	const listaAuxiliar = document.querySelector("ol")
+
+	const listaAlumnos = listaItems.map(alumno => alumno.innerHTML)
+
+	for(let alumno of listaAlumnos) {
+		let cadena = `<li>${alumno}</li>`
+		listaAuxiliar.innerHTML += cadena
+
+	}
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

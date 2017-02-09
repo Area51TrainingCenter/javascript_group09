@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<table></table>
+
+<script>
+	const promesa = new Promise((resolve, reject) => {
+
+		const obj = new XMLHttpRequest()
+
+		obj.onreadystatechange = function(){
+			if(this.readyState==4 && this.status==200){
+				const registros = JSON.parse(this.responseText)
+
+				resolve(registros)
+			} else if(this.readyState==4){
+				reject("Hay un error")
+			}
+		}
+
+		obj.onerror = function(){
+			console.log(this.statusText)
+		}
+
+		obj.open("GET", "http://javascript.tibajodemanda.com/listar", true)
+		obj.send()
+	})
+
+	promesa
+		.then((registros)=>{
+			const filas = registros.map((reg)=>`
+				<tr>
+					<td>${reg.id}</td>
+					<td>${reg.nombre}</td>
+					<td>${reg.edad}</td>
+				</tr>`).join("")
+
+			const tabla = document.querySelector("table")
+			tabla.innerHTML = filas
+
+		})
+		.catch((error)=> {
+			console.log(error)
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

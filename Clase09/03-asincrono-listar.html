@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<table></table>
+
+<script>
+/*
+	0: pedido o la requisión no ha sido iniciada
+	1: conexión con el servidor ha sido establecida
+	2: pedido o requision ha sido recibida
+	3: pedido o requsión se está procesando
+	4: petición ha sido atendida
+*/
+
+	const obj = new XMLHttpRequest()
+
+	obj.onreadystatechange = function(){
+		if(this.readyState==4 && this.status==200){
+			const registros = JSON.parse(this.responseText)
+
+			const filas = registros.map((reg)=>`
+				<tr>
+					<td>${reg.id}</td>
+					<td>${reg.nombre}</td>
+					<td>${reg.edad}</td>
+				</tr>`).join("")
+
+			const tabla = document.querySelector("table")
+			tabla.innerHTML = filas
+
+			// console.log(filas)
+		}
+	}
+
+	obj.onerror = function(){
+		console.log(this.statusText)
+	}
+
+	obj.open("GET", "http://javascript.tibajodemanda.com/listar", true)
+	obj.send()
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

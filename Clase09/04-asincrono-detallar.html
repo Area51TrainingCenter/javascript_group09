@@ -5,6 +5,11 @@
 </head>
 <body>
 
+<form>
+	<input type="text" name="nombre" id="nombre">
+	<input type="text" name="edad" id="edad">
+</form>
+
 <script>
 /*
 	0: pedido o la requisión no ha sido iniciada
@@ -18,7 +23,19 @@
 
 	obj.onreadystatechange = function(){
 		if(this.readyState==4 && this.status==200){
-			console.log(this.responseText)
+			const registro = JSON.parse(this.responseText)
+
+			const nombreInput = document.querySelector("#nombre"),
+				  edadInput   = document.querySelector("#edad")
+
+		    const {nombre, edad} = registro[0]
+
+			nombreInput.value = nombre
+			edadInput.value = edad
+
+			console.log(registro)
+
+			// console.log(filas)
 		}
 	}
 
@@ -26,7 +43,7 @@
 		console.log(this.statusText)
 	}
 
-	obj.open("GET", "http://javascript.tibajodemanda.com/listar", true)
+	obj.open("GET", "http://javascript.tibajodemanda.com/detallar/2", true)
 	obj.send()
 
 

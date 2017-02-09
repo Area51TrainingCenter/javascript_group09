@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script>
+	const promesa = new Promise((resolve, reject)=>{
+		const tiempoAleatorio = Math.random()*4000+2000
+		const opcion = Math.random()*10 > 5 ? true : false
+
+		setTimeout(()=>{
+			if(opcion){
+				resolve({estado: "ok", tiempo: tiempoAleatorio})	
+			} else {
+				reject({estado: "rechazada", tiempo: tiempoAleatorio})
+			}
+			
+		}, tiempoAleatorio)
+	})
+
+	promesa
+		.then((respuesta)=>{
+			console.log(respuesta)
+		})
+		.catch((respuesta)=>{
+			console.log(respuesta)
+		})
+
+</script>
+
+</body>
+</html>

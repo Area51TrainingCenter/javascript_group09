@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	const escogerPlato = new Promise((resolve, reject)=>{
+		setTimeout(()=>{
+			// resolve("arroz con pollo")
+			reject({estado: 500, msg: "El cliente no escogió nada"})
+		}, 3000)
+	})
+
+	escogerPlato
+		.then((eleccion)=>{
+			console.log(eleccion)
+
+			const entregarPlato = new Promise((resolve, reject)=>{
+				setTimeout(()=>{
+					resolve("plato entregado")
+				}, 2000)				
+			})
+
+			return entregarPlato
+		})
+		.then((mensaje)=>{
+			console.log(mensaje)
+		})
+		.catch((respuesta)=>{
+			console.log(respuesta)
+		})
+</script>
+
+</body>
+</html>

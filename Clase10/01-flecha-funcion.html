@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+</head>
+<body>
+
+<input type="button" id="btn" value="Presióname">
+
+<script>
+	const btn = document.querySelector("#btn")
+
+/*	btn.addEventListener("click", function(){
+		console.log(this)  // this  === btn
+		this.style.backgroundColor = "red"
+	})*/
+
+/*	btn.addEventListener("click", () => {
+		console.log(this)  // this  === btn
+		this.style.backgroundColor = "red"
+	})*/
+
+/*	btn.addEventListener("click", function(){
+		this.style.backgroundColor = "green"
+
+		const self = this
+
+		setTimeout(function(){
+			const nombre = "xxx"
+			console.log(self)
+			self.style.backgroundColor = "red"
+		}, 1000)
+	})*/
+
+	btn.addEventListener("click", function(){
+		this.style.backgroundColor = "green"
+
+
+		setTimeout(() => {
+			console.log(this)
+			this.style.backgroundColor = "red"
+		}, 1000)
+	})
+
+</script>
+
+
+</body>
+</html>

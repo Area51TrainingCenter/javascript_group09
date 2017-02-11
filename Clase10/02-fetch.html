@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<img src="">
+
+<script>
+/*const promesa = new Promise((resolve, reject) => {
+	const obj = new XMLHttpRequest()
+
+	....
+})
+
+promesa
+	.then(()=>{
+
+	})
+	.catch(()=>{
+
+	})*/
+
+
+	fetch("http://javascript.tibajodemanda.com/images/estadio.jpg")
+	.then((respuesta)=>{
+		console.log("Objeto Response")
+		console.log(respuesta)
+		if(respuesta.ok){
+			return respuesta.blob()
+		} else {
+			throw new Error("Hay error")
+		}
+		
+	})
+	.then((blob)=>{
+		console.log("Objeto Blob")
+		console.log(blob)
+
+		console.log("URL")
+		console.log(URL.createObjectURL(blob))
+
+		const img = document.querySelector("img")
+		img.src = URL.createObjectURL(blob)
+
+	})
+	.catch((error) => {
+		console.log(error)
+	})
+
+</script>
+
+</body>
+</html>

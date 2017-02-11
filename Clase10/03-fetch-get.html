@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf8">
+</head>
+<body>
+
+<script>
+/*
+	fetch tiene dos argumentos:
+		1. url
+		2. los datos de cabecera
+*/
+fetch("http://javascript.tibajodemanda.com/listar", {
+	method: "get"
+})
+	.then((resultados) => {
+		console.log(typeof(resultados))
+		console.log(resultados)
+		return resultados.json()
+	})
+	.then( registros => {
+		console.log(registros)
+	})
+	.catch( error => {
+		console.log(error)
+	})
+
+</script>
+
+
+
+</body>
+</html>

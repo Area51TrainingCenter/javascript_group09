@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	class Vehiculo {
+		constructor(marca, modelo, anno){
+			this.marcaVehiculo = marca
+			this.modeloVehiculo = modelo
+			this.annoVehiculo = anno
+		}
+
+		descripcion(){
+			return `Marca: ${this.marcaVehiculo}, Modelo: ${this.modeloVehiculo}, Año: ${this.annoVehiculo}`
+		}
+
+		acelerar(){
+			console.log("Acelerando")
+		}
+
+	}
+
+	const vehiculo = new Vehiculo("KIA", "Rio", 2017)
+	vehiculo.acelerar()
+	console.log(vehiculo.descripcion())
+
+	vehiculo.marcaVehiculo = "Hyundai"
+	vehiculo.modeloVehiculo = "Santa Fe"
+	vehiculo.annoVehiculo = 2009
+	console.log(vehiculo.descripcion())
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

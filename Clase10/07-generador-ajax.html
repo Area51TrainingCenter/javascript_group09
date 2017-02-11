@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+		
+
+		const ajax = (url, data, metodo="get") =>{
+			const cabecera = {}
+			cabecera.method = metodo
+
+			if(data) cabecera.body = data
+
+			fetch(url, cabecera)
+				.then(resultado => {
+					return resultado.json()
+				})
+				.then(registros => {
+					console.log(registros)
+					generador.next()
+				})
+				.catch(error => {
+					console.log(error)
+				})
+		}
+
+		function* llamadas(){
+			// Primer paso: listar
+			yield ajax("http://javascript.tibajodemanda.com/listar")
+
+			// Segundo paso: insertar
+			const datos = new FormData()
+			datos.append("nombre","María")
+			datos.append("apellido", "Felix")
+			datos.append("edad", 87)			
+			yield ajax("http://javascript.tibajodemanda.com/insertar", datos, "post")
+
+			// Tercer paso: eliminar
+			yield ajax("http://javascript.tibajodemanda.com/eliminar/25", undefined , "post")
+
+			// Cuarto paso: actualizar
+			const datosActualizar = new FormData()
+			datosActualizar.append("nombre", "Javier")
+			datosActualizar.append("apellido", "Luque")
+			datosActualizar.append("edad", 35)
+			yield ajax("http://javascript.tibajodemanda.com/actualizar/25", datosActualizar, "post")
+		}
+
+		const generador = llamadas()
+		generador.next()
+	</script>
+
+</body>
+</html>

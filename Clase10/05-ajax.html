@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+		const ajax = (url, data, metodo="get") =>{
+			const cabecera = {}
+			cabecera.method = metodo
+
+			if(data) cabecera.body = data
+
+			fetch(url, cabecera)
+				.then(resultado => {
+					return resultado.json()
+				})
+				.then(registros => {
+					console.log(registros)
+				})
+				.catch(error => {
+					console.log(error)
+				})
+		}
+
+		// Listar. Método "get"
+		ajax("http://javascript.tibajodemanda.com/listar")
+
+		const datos = new FormData()
+		datos.append("nombre","María")
+		datos.append("apellido", "Felix")
+		datos.append("edad", 87)
+
+		// Insertar. Método "post"
+		ajax("http://javascript.tibajodemanda.com/insertar", datos, "post")
+
+		// Eliminar. Método "post"
+		ajax("http://javascript.tibajodemanda.com/eliminar/25", undefined , "post")
+
+		const datosActualizar = new FormData()
+		datosActualizar.append("nombre", "Javier")
+		datosActualizar.append("apellido", "Luque")
+		datosActualizar.append("edad", 35)
+
+		// Actualizar. Método "post"
+		ajax("http://javascript.tibajodemanda.com/actualizar/25", datosActualizar, "post")
+	</script>
+
+</body>
+</html>

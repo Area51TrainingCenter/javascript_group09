@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	let fecha
+
+	function* ejecutar(){
+		fecha = new Date
+		yield fecha
+
+		fecha = new Date
+		yield fecha
+
+		fecha = new Date
+		yield fecha
+	}
+
+	const generador = ejecutar()
+
+</script>
+
+</body>
+</html>

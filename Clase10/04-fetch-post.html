@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	// Datos a enviar a través de la cabecera
+	const datos = new FormData()
+	datos.append("nombre", "Joel")
+	datos.append("apellido", "Ibañez")
+	datos.append("edad", 40)
+
+	fetch("http://javascript.tibajodemanda.com/insertar", {
+		method: "post",
+		body: datos
+	})
+	.then(resultado => {
+		return resultado.json()
+	})
+	.then(registro => {
+		console.log(registro)
+	})
+	.catch(error => {
+		console.log(error)
+	})
+
+
+</script>
+
+</body>
+</html>

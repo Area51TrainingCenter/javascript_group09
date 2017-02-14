@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	const symNombre = Symbol("nombre"),
+		  symApellido = Symbol("apellido")
+
+	class Alumno {
+		constructor(){
+			this[symNombre] = "Alonso"
+			this[symApellido] = "Trejo"			
+		}
+
+		get nombre(){
+			return this[symNombre]
+		}
+
+		set nombre(valor){
+			this[symNombre] = valor
+		}
+
+		get apellido(){
+			return this[symApellido]
+		}
+
+		set apellido(valor){
+			this[symApellido] = valor
+		}
+	}
+
+	const alumno = new Alumno()
+	console.log(alumno.nombre)
+</script>
+
+</body>
+</html>

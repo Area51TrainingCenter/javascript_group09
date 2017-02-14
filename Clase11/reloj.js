@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-	<h1></h1>
-
-	<script>
 		class Reloj {
 			constructor(elemento){
 				this.elemento = elemento
@@ -48,28 +38,3 @@
 				this.listaAlarmas.push(horaAlarma)
 			}
 		}
-
-		class Alarma extends Reloj {
-			constructor(elemento, horaAlarma){
-				super(elemento)
-			}
-
-			agregarAlarma(horaAlarma) {
-				this.setearAlarma(horaAlarma)
-			}
-
-		}
-
-		const h1 = document.querySelector("h1")
-		const horaAlarma = {horas: 20, minutos: 29, segundos: 50}
-
-		const alarma = new Alarma(h1)
-		alarma.agregarAlarma(horaAlarma)
-		alarma.iniciar()
-
-
-
-	</script>
-
-</body>
-</html>

@@ -17,7 +17,7 @@ var path = require('path');
 
 
  module.exports = {
-     entry: './js/main.js',
+     entry: './js/principal.js',
      output: {
          path: path.resolve(__dirname, 'build'),
          filename: 'main.bundle.js'

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	class Alumno {
+		constructor(nombre, apellido) {
+			this.nombre = nombre
+			this.apellido = apellido
+		}
+
+		obtenerNombre(){
+			return this.nombre
+		}
+
+		obtenerApellido(){
+			return this.apellido
+		}
+
+
+		obtenerDatos(){
+			console.log("%c obtenerDatos","background-color:red;color:white;font-family:Arial;font-size:30px;padding:10px")
+		}
+
+		elegirCursos(){
+			console.log("%c elegirCursos","background-color:red;color:white;font-family:Arial;font-size:30px;padding:10px")
+		}
+
+
+		realizarPagos(){
+			console.log("%c realizarDatos","background-color:red;color:white;font-family:Arial;font-size:30px;padding:10px")
+		}
+
+
+		actualizarDatos(){
+			console.log("%c obtenerDatos","background-color:red;color:white;font-family:Arial;font-size:30px;padding:10px")
+		}
+	}
+
+	const nombre = "Elena"
+	const apellido = "Lizárraga"
+
+	const alumno = new Alumno(nombre, apellido)
+	alumno.obtenerDatos()
+	alumno.elegirCursos()
+	alumno.realizarPagos()
+	alumno.actualizarDatos()
+
+
+</script>
+
+</body>
+</html>

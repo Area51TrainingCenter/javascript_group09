@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1></h1>
+
+	<script>
+		class Reloj {
+			constructor(elemento){
+				this.elemento = elemento
+				this.listaAlarmas = []
+			}
+
+			actualizar(){
+				this.tiempo = new Date()
+
+				this.horas = this.tiempo.getHours()
+				this.minutos = this.tiempo.getMinutes()
+				this.segundos = this.tiempo.getSeconds()
+
+				this.horas = this.horas < 10 ? `0${this.horas}` : this.horas
+				this.minutos = this.minutos < 10 ? `0${this.minutos}` : this.minutos
+				this.segundos = this.segundos < 10 ? `0${this.segundos}` : this.segundos
+
+				this.elemento.innerHTML = `${this.horas}:${this.minutos}:${this.segundos}`
+
+				this.verificarAlarmas(this.horas, this.minutos)
+			}
+
+			verificarAlarmas(horas, minutos){
+				for(let alarma of this.listaAlarmas) {
+					if(alarma.horas == horas && alarma.minutos == minutos) {
+						console.log("Alarma sonando")
+					}
+				}
+			}
+
+			iniciar(){
+				setInterval(()=>this.actualizar(), 1000)
+			}
+
+			setearAlarma(horaAlarma) {
+				this.listaAlarmas.push(horaAlarma)
+			}
+		}
+
+		class Alarma extends Reloj {
+			constructor(elemento, horaAlarma){
+				super(elemento)
+
+				this.setearAlarma(horaAlarma)
+
+			}
+
+		}
+
+		const h1 = document.querySelector("h1")
+		const horaAlarma = {horas: 20, minutos: 23}
+
+		const alarma = new Alarma(h1, horaAlarma)
+		alarma.iniciar()
+
+
+
+	</script>
+
+</body>
+</html>

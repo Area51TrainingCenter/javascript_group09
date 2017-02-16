@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	function miFuncion(){
+
+		let contador = 0
+		// this.contador = 0
+
+		this.incrementar = function() {
+			contador++
+		}
+
+		contador = 20
+
+		this.mostrarValor = function() {
+			console.log(contador)
+		}
+
+		contador /= 2
+
+		return this
+	}
+
+
+	const mf = miFuncion()
+	mf.mostrarValor()
+	mf.incrementar()
+	mf.mostrarValor()
+
+	// console.log(mF.contador)
+
+
+</script>
+
+</body>
+</html>

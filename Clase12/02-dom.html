@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	.rojo {color:red;}
+	</style>
+</head>
+<body>
+
+<div>Mi propio Javascript</div>
+
+
+<script>
+	function $(elementoHTML){
+		let elementos = Array.from(document.querySelectorAll(elementoHTML))
+		// console.log(elementos)
+
+		this.addClass = function(miClase) {
+			elementos.forEach(function(item){
+				item.classList.add(miClase)
+			})
+		}
+
+		this.removeClass = function(miClase) {
+			elementos.forEach(function(item){
+				item.classList.remove(miClase)
+			})
+		}
+
+		return this
+	}
+
+
+/*	const mjs = $("div")
+	mjs.addClass("rojo")*/
+	$("div").addClass("rojo")
+
+	setTimeout(function(){
+		$("div").removeClass("rojo")
+	}, 3000)
+
+</script>
+
+</body>
+</html>

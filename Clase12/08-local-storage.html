@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<a href="#">Link</a>
+
+<script>
+	const enlace = document.querySelector("a")
+
+	enlace.addEventListener("click", function(evt) 
+	{
+		evt.preventDefault()
+		localStorage.nombre = "Sergio"
+	})
+	
+</script>
+
+</body>
+</html>

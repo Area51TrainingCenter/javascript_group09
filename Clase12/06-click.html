@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<a href="http://www.google.com" data-titulo="Google" data-logo="google.jpg">Enlace1</a><br>
+<a href="https://facebook.com" data-titulo="Facebook" data-logo="facebook.png">Enlace2</a><br>
+<a href="https://instagram.com" data-titulo="Instagram" data-logo="instagram.png">Enlace3</a><br>
+<a href="http://area51.pe" data-titulo="Area51" data-logo="area51.jpg">Enlace4</a><br>
+
+<script>
+	const enlaces = document.querySelectorAll("a")
+
+	enlaces.forEach(function(item){
+		item.addEventListener("click", function(evt){
+			evt.preventDefault()
+
+			const titulo = this.getAttribute("data-titulo")
+			// alert(titulo)
+			const logo = this.getAttribute("data-logo")
+
+			const img = document.createElement("img")
+			img.src = logo
+
+			document.body.appendChild(img)
+
+
+		})
+	})
+</script>
+
+
+</body>
+</html>

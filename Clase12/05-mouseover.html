@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	html, body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0
+	}
+
+	div {
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	</style>
+</head>
+<body>
+
+	<div></div>
+
+<script>
+	let div = document.querySelector("div")
+	document.body.addEventListener("mousemove", function(evt){
+		div.style.top = evt.pageY + "px"
+		div.style.left = evt.pageX + "px"
+	})
+</script>
+
+</body>
+</html>

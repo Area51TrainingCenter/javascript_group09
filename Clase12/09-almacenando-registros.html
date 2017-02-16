@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<a href="#" class="registro">Registro</a><br>
+<a href="#" class="lectura">Lectura</a>
+
+<script>
+	const enlace = document.querySelector("a.registro")
+
+	const registros = [
+		{codigo: "15012", nombre: "Miraflores"},
+		{codigo: "15013", nombre: "Pueblo Libre"},
+		{codigo: "15014", nombre: "San Isidro"},
+		{codigo: "15015", nombre: "Comas"}
+	]
+
+	enlace.addEventListener("click", function(evt) 
+	{
+		evt.preventDefault()
+
+		const datos = JSON.stringify(registros)
+
+		localStorage.ubigeo = datos
+	})
+
+	const lectura = document.querySelector("a.lectura")
+
+	lectura.addEventListener("click", function(evt){
+		evt.preventDefault()
+
+		const datos = JSON.parse(localStorage.ubigeo)
+		console.log(datos)
+	})
+	
+</script>
+
+</body>
+</html>

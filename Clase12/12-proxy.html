@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	
+const alumno = {nombre: "Sergio", apellido: "", edad: 40}
+
+const manejador = {
+	get(objetivo, propiedad) {
+		return objetivo[propiedad].toUpperCase()
+	},
+
+	set(objetivo, propiedad, valor) {
+		if(propiedad=="edad") {
+			console.log(isNaN(valor) )
+			console.log(valor<=0)
+			if(isNaN(valor) || valor<=0) {
+				throw new TypeError("No es un número")
+			} else {
+				objetivo[propiedad] = valor
+			}
+		} else {
+			objetivo[propiedad] = valor.toUpperCase()
+		}
+		
+	}
+}
+
+const alumnoProxy = new Proxy(alumno, manejador)
+
+
+console.log(alumnoProxy.nombre)
+
+alumnoProxy.apellido = "hidalgo"
+
+console.log(alumnoProxy.apellido)
+
+
+</script>
+
+</body>
+</html>

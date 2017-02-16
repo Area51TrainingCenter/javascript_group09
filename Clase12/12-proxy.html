@@ -9,6 +9,10 @@
 	
 const alumno = {nombre: "Sergio", apellido: "", edad: 40}
 
+alumno.nombre
+alumno["nombre"]  = "Ivan"
+
+
 const manejador = {
 	get(objetivo, propiedad) {
 		return objetivo[propiedad].toUpperCase()
@@ -16,8 +20,6 @@ const manejador = {
 
 	set(objetivo, propiedad, valor) {
 		if(propiedad=="edad") {
-			console.log(isNaN(valor) )
-			console.log(valor<=0)
 			if(isNaN(valor) || valor<=0) {
 				throw new TypeError("No es un número")
 			} else {
@@ -26,7 +28,6 @@ const manejador = {
 		} else {
 			objetivo[propiedad] = valor.toUpperCase()
 		}
-		
 	}
 }
 
